@@ -13,7 +13,7 @@ app.use(morgan('short'))
 
 console.log("test-git");
 
-app.get('/', function (res, req) {
+app.get('/', function (req, req) {
     res.send("Hello World !")
 });
 
