@@ -13,8 +13,8 @@ app.use(morgan('short'))
 
 console.log("test-git");
 
-app.get('/', function (req, res) {
-    console.log("Hello World !");
+app.get('/', function (res, req) {
+    res.send("Hello World !")
 });
 
 // Get all the users defined
