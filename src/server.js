@@ -15,7 +15,7 @@ console.log("test-git");
 
 app.get('/', function (req, res) {
     console.log("Hello World !");
-}
+});
 
 // Get all the users defined
 /*app.get('/', function (req, res) {
@@ -44,7 +44,7 @@ app.post('/', function(req, res) {
    * 
    * Listen only when database connection is sucessfull
    */
-  app.listen(process.env.PORT, function() {
-    console.log('Express server listening on port 3000');
-  });
+app.listen(process.env.PORT, function() {
+        console.log('Express server listening on port 3000');
+});
 //});
