@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express()
-const models = require('./models/index');
+//const models = require('./models/index');
 
 // Decode json and x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -11,13 +11,20 @@ app.use(bodyParser.json())
 // Add a bit of logging
 app.use(morgan('short'))
 
-// Get all the users defined
+console.log("test-git");
+
 app.get('/', function (req, res) {
+    console.log("Hello World !");
+}
+
+// Get all the users defined
+/*app.get('/', function (req, res) {
   models.User.findAll()
     .then((users) => {
       res.json(users)
     })
 })
+
 
 // Add a new user to the database
 app.post('/', function(req, res) {
@@ -27,16 +34,17 @@ app.post('/', function(req, res) {
     .then(() => {
       res.send('User added !')
     })
-})
+})*/
+
 
 // Synchronize models
-models.sequelize.sync().then(function() {
+//models.sequelize.sync().then(function() {
   /**
    * Listen on provided port, on all network interfaces.
    * 
    * Listen only when database connection is sucessfull
    */
-  app.listen(3000, function() {
+  app.listen(process.env.port, function() {
     console.log('Express server listening on port 3000');
   });
-});
+//});
